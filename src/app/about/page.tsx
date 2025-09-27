@@ -1,7 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Heart, Shield, Users, ArrowRight, Award, BookOpen, Phone, CheckCircle, Star, Globe, Clock } from 'lucide-react';
+import { Heart, Shield, Users, Award, CheckCircle, Star, Globe, Clock } from 'lucide-react';
+import Link from 'next/link';
 
 export default function About() {
   return (
@@ -27,18 +28,18 @@ export default function About() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="hidden md:flex items-center space-x-6"
             >
-              <a href="/" className="text-lg text-gray-700 hover:text-blue-600 transition-colors">
+              <Link href="/" className="text-lg text-gray-700 hover:text-blue-600 transition-colors">
                 Home
-              </a>
-              <a href="/about" className="text-lg text-blue-600 font-semibold">
+              </Link>
+              <Link href="/about" className="text-lg text-blue-600 font-semibold">
                 About
-              </a>
+              </Link>
               <a href="#health-focus" className="text-lg text-gray-700 hover:text-blue-600 transition-colors">
                 Health Topics
               </a>
-              <a href="/contact" className="text-lg text-gray-700 hover:text-blue-600 transition-colors">
+              <Link href="/contact" className="text-lg text-gray-700 hover:text-blue-600 transition-colors">
                 Contact
-              </a>
+              </Link>
             </motion.div>
           </div>
         </div>
@@ -354,12 +355,12 @@ export default function About() {
               get the latest information, and take control of your health journey.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a 
+              <Link 
                 href="/"
                 className="bg-gradient-to-r from-blue-600 to-green-600 text-white font-semibold py-4 px-8 rounded-lg text-lg hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
               >
                 Explore Health Topics
-              </a>
+              </Link>
               <a 
                 href="/contact"
                 className="border-2 border-blue-600 text-blue-600 font-semibold py-4 px-8 rounded-lg text-lg hover:bg-blue-600 hover:text-white transition-all duration-300"
@@ -391,19 +392,19 @@ export default function About() {
               <h6 className="text-lg font-semibold mb-4">Quick Links</h6>
               <ul className="space-y-2">
                 <li>
-                  <a href="/" className="text-gray-300 hover:text-white transition-colors text-lg">
+                  <Link href="/" className="text-gray-300 hover:text-white transition-colors text-lg">
                     Home
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/about" className="text-gray-300 hover:text-white transition-colors text-lg">
+                  <Link href="/about" className="text-gray-300 hover:text-white transition-colors text-lg">
                     About Us
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/contact" className="text-gray-300 hover:text-white transition-colors text-lg">
+                  <Link href="/contact" className="text-gray-300 hover:text-white transition-colors text-lg">
                     Contact Us
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

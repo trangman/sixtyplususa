@@ -6,9 +6,9 @@ import Link from 'next/link';
 import { BlogCard } from '../../../components/blog/BlogComponents';
 
 interface BlogPostPageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 export async function generateStaticParams() {

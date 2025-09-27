@@ -1,8 +1,7 @@
 'use client';
 
-import { useState } from 'react';
-import { Calendar, Clock, User, Tag, Search, Filter } from 'lucide-react';
-import { BlogPostMeta } from '../lib/blog';
+import { Calendar, Clock, User, Search, Filter } from 'lucide-react';
+import { BlogPostMeta } from '../../lib/blog-client';
 import { format } from 'date-fns';
 
 interface BlogCardProps {

@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Heart, Shield, Users, ArrowRight, BookOpen, Calendar, Clock } from 'lucide-react';
 import { format } from 'date-fns';
 import { BlogPostMeta } from '../lib/blog-client';
+import Link from 'next/link';
 
 interface HomeClientProps {
   blogPosts: BlogPostMeta[];
@@ -38,9 +39,9 @@ export default function HomeClient({ blogPosts }: HomeClientProps) {
               <a href="/about" className="text-lg text-gray-700 hover:text-blue-600 transition-colors">
                 About
               </a>
-              <a href="/blog" className="text-lg text-gray-700 hover:text-blue-600 transition-colors">
+              <Link href="/blog" className="text-lg text-gray-700 hover:text-blue-600 transition-colors">
                 Blog
-              </a>
+              </Link>
               <a href="#health-focus" className="text-lg text-gray-700 hover:text-blue-600 transition-colors">
                 Health Topics
               </a>
@@ -269,14 +270,14 @@ export default function HomeClient({ blogPosts }: HomeClientProps) {
               transition={{ duration: 0.8, delay: 1.0 }}
               className="text-center mt-12"
             >
-              <a
-                href="/blog"
-                className="inline-flex items-center bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700 text-white font-bold text-lg px-8 py-3 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300"
-              >
-                <BookOpen className="w-5 h-5 mr-2" />
-                View All Articles
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </a>
+                <Link
+                  href="/blog"
+                  className="inline-flex items-center bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700 text-white font-bold text-lg px-8 py-3 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300"
+                >
+                  <BookOpen className="w-5 h-5 mr-2" />
+                  View All Articles
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Link>
             </motion.div>
           </div>
         </section>
@@ -307,9 +308,9 @@ export default function HomeClient({ blogPosts }: HomeClientProps) {
                   </a>
                 </li>
                 <li>
-                  <a href="/blog" className="text-gray-300 hover:text-white transition-colors text-lg">
+                  <Link href="/blog" className="text-gray-300 hover:text-white transition-colors text-lg">
                     Blog
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <a href="#health-focus" className="text-gray-300 hover:text-white transition-colors text-lg">

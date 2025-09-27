@@ -1,7 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Heart, Shield, Users, ArrowRight, FileText, AlertTriangle, CheckCircle, Scale } from 'lucide-react';
+import { Heart, Shield, FileText, AlertTriangle, CheckCircle, Scale } from 'lucide-react';
+import Link from 'next/link';
 
 export default function TermsOfService() {
   return (
@@ -27,9 +28,9 @@ export default function TermsOfService() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="hidden md:flex items-center space-x-6"
             >
-              <a href="/" className="text-lg text-gray-700 hover:text-blue-600 transition-colors">
+              <Link href="/" className="text-lg text-gray-700 hover:text-blue-600 transition-colors">
                 Home
-              </a>
+              </Link>
               <a href="/about" className="text-lg text-gray-700 hover:text-blue-600 transition-colors">
                 About
               </a>
@@ -100,7 +101,7 @@ export default function TermsOfService() {
               
               <div className="bg-blue-50 rounded-lg p-6">
                 <p className="text-gray-700 text-lg leading-relaxed mb-4">
-                  By accessing and using SixtyPlusUSA ("the Service"), you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by the above, please do not use this service.
+                  By accessing and using SixtyPlusUSA (&ldquo;the Service&rdquo;), you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by the above, please do not use this service.
                 </p>
                 <div className="bg-white rounded-lg p-4 border-l-4 border-blue-600">
                   <p className="text-gray-700 font-medium">
@@ -322,9 +323,9 @@ export default function TermsOfService() {
               <h6 className="text-lg font-semibold mb-4">Quick Links</h6>
               <ul className="space-y-2">
                 <li>
-                  <a href="/" className="text-gray-300 hover:text-white transition-colors text-lg">
+                  <Link href="/" className="text-gray-300 hover:text-white transition-colors text-lg">
                     Home
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <a href="/about" className="text-gray-300 hover:text-white transition-colors text-lg">

@@ -1,7 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Heart, Shield, Users, ArrowRight, Lock, Eye, Database, Mail } from 'lucide-react';
+import { Heart, Shield, Lock, Eye, Database, Mail } from 'lucide-react';
+import Link from 'next/link';
 
 export default function PrivacyPolicy() {
   return (
@@ -27,9 +28,9 @@ export default function PrivacyPolicy() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="hidden md:flex items-center space-x-6"
             >
-              <a href="/" className="text-lg text-gray-700 hover:text-blue-600 transition-colors">
+              <Link href="/" className="text-lg text-gray-700 hover:text-blue-600 transition-colors">
                 Home
-              </a>
+              </Link>
               <a href="/about" className="text-lg text-gray-700 hover:text-blue-600 transition-colors">
                 About
               </a>
@@ -330,9 +331,9 @@ export default function PrivacyPolicy() {
               <h6 className="text-lg font-semibold mb-4">Quick Links</h6>
               <ul className="space-y-2">
                 <li>
-                  <a href="/" className="text-gray-300 hover:text-white transition-colors text-lg">
+                  <Link href="/" className="text-gray-300 hover:text-white transition-colors text-lg">
                     Home
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <a href="/about" className="text-gray-300 hover:text-white transition-colors text-lg">

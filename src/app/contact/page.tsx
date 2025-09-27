@@ -1,7 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Heart, Mail, Phone, MapPin, Clock, Send, MessageCircle, Users } from 'lucide-react';
+import { Heart, Mail, Phone, Clock, Send, MessageCircle, Users } from 'lucide-react';
+import Link from 'next/link';
 
 export default function Contact() {
   return (
@@ -27,9 +28,9 @@ export default function Contact() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="hidden md:flex items-center space-x-6"
             >
-              <a href="/" className="text-lg text-gray-700 hover:text-blue-600 transition-colors">
+              <Link href="/" className="text-lg text-gray-700 hover:text-blue-600 transition-colors">
                 Home
-              </a>
+              </Link>
               <a href="/about" className="text-lg text-gray-700 hover:text-blue-600 transition-colors">
                 About
               </a>
@@ -64,7 +65,7 @@ export default function Contact() {
             className="max-w-3xl mx-auto"
           >
             <p className="text-xl md:text-2xl text-gray-600 leading-relaxed mb-8">
-              We're here to help! Reach out to us with questions, feedback, or health concerns. 
+              We&apos;re here to help! Reach out to us with questions, feedback, or health concerns. 
               Our team is dedicated to supporting seniors and their families.
             </p>
           </motion.div>
@@ -171,7 +172,7 @@ export default function Contact() {
               Send Us a Message
             </h3>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              We'd love to hear from you. Please fill out the form below and we'll get back to you as soon as possible.
+              We&apos;d love to hear from you. Please fill out the form below and we&apos;ll get back to you as soon as possible.
             </p>
           </motion.div>
 
@@ -394,9 +395,9 @@ export default function Contact() {
               <h6 className="text-lg font-semibold mb-4">Quick Links</h6>
               <ul className="space-y-2">
                 <li>
-                  <a href="/" className="text-gray-300 hover:text-white transition-colors text-lg">
+                  <Link href="/" className="text-gray-300 hover:text-white transition-colors text-lg">
                     Home
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <a href="/about" className="text-gray-300 hover:text-white transition-colors text-lg">

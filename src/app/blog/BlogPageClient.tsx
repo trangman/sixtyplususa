@@ -2,9 +2,10 @@
 
 import { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
-import { Heart, BookOpen, Users, ArrowRight } from 'lucide-react';
+import { Heart, BookOpen, Users } from 'lucide-react';
 import { filterPostsByTag, searchPostsClient, BlogPostMeta } from '../../lib/blog-client';
 import { BlogGrid, BlogFilters, FeaturedPost } from '../../components/blog/BlogComponents';
+import Link from 'next/link';
 
 interface BlogPageClientProps {
   allPosts: BlogPostMeta[];
@@ -58,9 +59,9 @@ export default function BlogPageClient({ allPosts, allTags }: BlogPageClientProp
               transition={{ duration: 0.6, delay: 0.2 }}
               className="hidden md:flex items-center space-x-6"
             >
-              <a href="/" className="text-lg text-gray-700 hover:text-blue-600 transition-colors">
+              <Link href="/" className="text-lg text-gray-700 hover:text-blue-600 transition-colors">
                 Home
-              </a>
+              </Link>
               <a href="/about" className="text-lg text-gray-700 hover:text-blue-600 transition-colors">
                 About
               </a>
@@ -220,9 +221,9 @@ export default function BlogPageClient({ allPosts, allTags }: BlogPageClientProp
               <h6 className="text-lg font-semibold mb-4">Quick Links</h6>
               <ul className="space-y-2">
                 <li>
-                  <a href="/" className="text-gray-300 hover:text-white transition-colors text-lg">
+                  <Link href="/" className="text-gray-300 hover:text-white transition-colors text-lg">
                     Home
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <a href="/about" className="text-gray-300 hover:text-white transition-colors text-lg">
