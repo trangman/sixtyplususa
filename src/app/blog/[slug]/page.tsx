@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation';
-import { getPostBySlug, getAllPosts, getRelatedPosts } from '../../../lib/blog';
+import { getPostBySlug, getAllPosts, getRelatedPosts } from '../../../lib/blog-server';
 import { format } from 'date-fns';
 import { Calendar, Clock, User, Tag, ArrowLeft, Share2 } from 'lucide-react';
 import Link from 'next/link';
@@ -19,7 +19,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: BlogPostPageProps) {
-  const post = await getPostBySlug(params.slug);
+  const { slug } = await params;
+  const post = await getPostBySlug(slug);
   
   if (!post) {
     return {
@@ -43,13 +44,14 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
-  const post = await getPostBySlug(params.slug);
+  const { slug } = await params;
+  const post = await getPostBySlug(slug);
   
   if (!post) {
     notFound();
   }
 
-  const relatedPosts = getRelatedPosts(params.slug, 3);
+  const relatedPosts = getRelatedPosts(slug, 3);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-green-50">

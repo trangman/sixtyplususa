@@ -32,7 +32,7 @@ export interface BlogPostMeta {
 
 const postsDirectory = path.join(process.cwd(), 'content/blog');
 
-// Get all blog posts
+// Get all blog posts (server-side only)
 export function getAllPosts(): BlogPostMeta[] {
   try {
     const fileNames = fs.readdirSync(postsDirectory);
@@ -66,26 +66,26 @@ export function getAllPosts(): BlogPostMeta[] {
   }
 }
 
-// Get featured posts
+// Get featured posts (server-side only)
 export function getFeaturedPosts(): BlogPostMeta[] {
   return getAllPosts().filter((post) => post.featured);
 }
 
-// Get posts by tag
+// Get posts by tag (server-side only)
 export function getPostsByTag(tag: string): BlogPostMeta[] {
   return getAllPosts().filter((post) => 
     post.tags.some((postTag) => postTag.toLowerCase() === tag.toLowerCase())
   );
 }
 
-// Get all unique tags
+// Get all unique tags (server-side only)
 export function getAllTags(): string[] {
   const posts = getAllPosts();
   const allTags = posts.flatMap((post) => post.tags);
   return [...new Set(allTags)].sort();
 }
 
-// Get a single post by slug
+// Get a single post by slug (server-side only)
 export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
   try {
     const fullPath = path.join(postsDirectory, `${slug}.md`);
@@ -125,7 +125,7 @@ function calculateReadingTime(content: string): number {
   return Math.ceil(wordCount / wordsPerMinute);
 }
 
-// Get related posts based on tags
+// Get related posts based on tags (server-side only)
 export function getRelatedPosts(currentSlug: string, limit: number = 3): BlogPostMeta[] {
   const currentPost = getAllPosts().find((post) => post.slug === currentSlug);
   if (!currentPost) return [];
@@ -140,7 +140,7 @@ export function getRelatedPosts(currentSlug: string, limit: number = 3): BlogPos
   return relatedPosts;
 }
 
-// Search posts by title and content
+// Search posts by title and content (server-side only)
 export function searchPosts(query: string): BlogPostMeta[] {
   const posts = getAllPosts();
   const lowercaseQuery = query.toLowerCase();
