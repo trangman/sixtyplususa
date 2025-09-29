@@ -69,5 +69,11 @@
   "frontMatter.framework.id": "next",
   "frontMatter.content.publicFolder": "public",
   "frontMatter.preview.host": "http://localhost:3000",
-  "frontMatter.git.enabled": false
+  "frontMatter.git.enabled": false,
+  "frontMatter.content.pageFolders": [
+    {
+      "title": "blog",
+      "path": "[[workspace]]/content/blog"
+    }
+  ]
 }

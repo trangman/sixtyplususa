@@ -21,7 +21,7 @@ This UTM tracking system allows you to track traffic sources, campaigns, and con
 
 ### ✅ **UTM Link Generation**
 - Generate UTM-tracked URLs programmatically
-- Pre-configured ProstaVive links with proper attribution
+- Pre-configured ProstaVive affiliate links with proper attribution
 
 ## Usage
 

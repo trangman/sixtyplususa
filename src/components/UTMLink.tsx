@@ -1,6 +1,7 @@
 'use client';
 
 import { generateUTMUrl, UTMParameters } from '../lib/utm-tracking';
+import { getAffiliateLink } from '../config/affiliate-links';
 
 interface UTMLinkProps {
   href: string;
@@ -61,7 +62,7 @@ export function ProstaViveLink({
   
   return (
     <UTMLink 
-      href="https://prostavive.org/" 
+      href={getAffiliateLink('PROSTAVIVE')} 
       className={className}
       utmParams={utmParams}
       onClick={onClick}
