@@ -37,9 +37,9 @@ export function getAllPosts(): BlogPostMeta[] {
   try {
     const fileNames = fs.readdirSync(postsDirectory);
     const allPostsData = fileNames
-      .filter((name) => name.endsWith('.md'))
+      .filter((name) => name.endsWith('.md') || name.endsWith('.mdx'))
       .map((fileName) => {
-        const slug = fileName.replace(/\.md$/, '');
+        const slug = fileName.replace(/\.(md|mdx)$/, '');
         const fullPath = path.join(postsDirectory, fileName);
         const fileContents = fs.readFileSync(fullPath, 'utf8');
         const { data } = matter(fileContents);
@@ -88,7 +88,11 @@ export function getAllTags(): string[] {
 // Get a single post by slug (server-side only)
 export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
   try {
-    const fullPath = path.join(postsDirectory, `${slug}.md`);
+    // Try .mdx first, then .md
+    let fullPath = path.join(postsDirectory, `${slug}.mdx`);
+    if (!fs.existsSync(fullPath)) {
+      fullPath = path.join(postsDirectory, `${slug}.md`);
+    }
     const fileContents = fs.readFileSync(fullPath, 'utf8');
     const { data, content } = matter(fileContents);
 
